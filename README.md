@@ -1,4 +1,4 @@
-# Engenharia De Software
+# PartyHub
 
 Acima estão os códigos para os principais fluxos do código (sem interface gráfica).
 
