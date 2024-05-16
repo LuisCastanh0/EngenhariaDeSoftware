@@ -1,4 +1,5 @@
-# EngenhariaDeSoftware
-Repositório destinado ao projeto da matéria de Engenharia de Software
+# Engenharia De Software
 
-[Acesse a WIKI](https://github.com/LuisCastanh0/EngenhariaDeSoftware/wiki)
+Acima estão os códigos para os principais fluxos do código (sem interface gráfica).
+
+[Acesse a WIKI](https://github.com/LuisCastanh0/EngenhariaDeSoftware/wiki) para ver os detalhes do desenvolvimento do projeto.
