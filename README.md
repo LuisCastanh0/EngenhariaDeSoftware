@@ -1,5 +1,5 @@
 # PartyHub
 
-Acima estão os códigos para os principais fluxos do código (sem interface gráfica).
+Para ver os códigos desenvolvidos no projeto acesse a pasta "PartyHub". [Clique aqui](https://github.com/LuisCastanh0/EngenhariaDeSoftware/tree/main/PartyHub)
 
 [Acesse a WIKI](https://github.com/LuisCastanh0/EngenhariaDeSoftware/wiki) para ver os detalhes do desenvolvimento do projeto.
