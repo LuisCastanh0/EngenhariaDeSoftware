@@ -1,11 +1,11 @@
-id;name;type;capacity;square_meters;Owner_id;Owner_name;Owner_phone;Owner_email;about;rules;country;state;city;district;street;number
-501;Local1;Event Hall;200;300;201;Owner2;123456789;owner2@example.com;About Local1;Rules for Local1;Country1;State1;City1;District1;Street1;1
-502;Local2;Conference Room;50;100;202;Owner3;123456789;owner3@example.com;About Local2;Rules for Local2;Country1;State1;City1;District1;Street2;2
-503;Local3;Auditorium;300;500;203;Owner4;123456789;owner4@example.com;About Local3;Rules for Local3;Country1;State1;City1;District2;Street3;3
-504;Local4;Meeting Room;20;50;204;Owner5;123456789;owner5@example.com;About Local4;Rules for Local4;Country1;State1;City2;District1;Street4;4
-505;Local5;Banquet Hall;150;250;205;Owner6;123456789;owner6@example.com;About Local5;Rules for Local5;Country1;State1;City2;District1;Street5;5
-506;Local6;Conference Room;30;70;206;Owner7;123456789;owner7@example.com;About Local6;Rules for Local6;Country1;State2;City1;District1;Street6;6
-507;Local7;Event Space;100;200;207;Owner8;123456789;owner8@example.com;About Local7;Rules for Local7;Country1;State2;City1;District1;Street7;7
-508;Local8;Meeting Room;15;40;208;Owner9;123456789;owner9@example.com;About Local8;Rules for Local8;Country1;State2;City2;District1;Street8;8
-509;Local9;Auditorium;250;400;209;Owner10;123456789;owner10@example.com;About Local9;Rules for Local9;Country1;State2;City2;District2;Street9;9
-510;Local10;Banquet Hall;200;300;210;Owner11;123456789;owner11@example.com;About Local10;Rules for Local10;Country1;State2;City2;District2;Street10;10
+id;name;type;capacity;square_meters;Owner_id;about;rules;country;state;city;district;street;number
+501;Local1;Event Hall;200;300;201;About Local1;Rules for Local1;Country1;State1;City1;District1;Street1;1
+502;Local2;Conference Room;50;100;202;About Local2;Rules for Local2;Country1;State1;City1;District1;Street2;2
+503;Local3;Auditorium;300;500;203;About Local3;Rules for Local3;Country1;State1;City1;District2;Street3;3
+504;Local4;Meeting Room;20;50;204;About Local4;Rules for Local4;Country1;State1;City2;District1;Street4;4
+505;Local5;Banquet Hall;150;250;205;About Local5;Rules for Local5;Country1;State1;City2;District1;Street5;5
+506;Local6;Conference Room;30;70;206;About Local6;Rules for Local6;Country1;State2;City1;District1;Street6;6
+507;Local7;Event Space;100;200;207;About Local7;Rules for Local7;Country1;State2;City1;District1;Street7;7
+508;Local8;Meeting Room;15;40;208;About Local8;Rules for Local8;Country1;State2;City2;District1;Street8;8
+509;Local9;Auditorium;250;400;209;About Local9;Rules for Local9;Country1;State2;City2;District2;Street9;9
+510;Local10;Banquet Hall;200;300;210;About Local10;Rules for Local10;Country1;State2;City2;District2;Street10;10

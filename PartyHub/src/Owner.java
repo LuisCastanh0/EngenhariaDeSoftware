@@ -55,4 +55,15 @@ public class Owner {
         this.age = age;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner [id=" + id + ", name=" + name + "]";
+    }
+
+
+    
 }

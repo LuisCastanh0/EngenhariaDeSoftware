@@ -102,12 +102,8 @@ public class User {
         }
     }
 
-    // Necessário outra função para auxiliar na cancela via Proprietário.
-
-
     @Override
     public String toString() {
-        return "User [name=" + name + ", age=" + age + ", sex=" + sex + ", email=" + email + "]";
+        return "User [id=" + id + ", name=" + name + ", Reservations=" + Reservations + "]";
     }
-
 }

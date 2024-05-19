@@ -6,8 +6,8 @@ public class Property {
     public String id;
     public String name;
     public String type;
-    public int capacity;
-    public int square_meters;
+    public String capacity;
+    public String square_meters;
     public Owner owner;
     public String about;
     public String rules;
@@ -17,7 +17,7 @@ public class Property {
     public int Reservation_counter=0;
 
     // Construtor
-    public Property(String id,String name, String type, int capacity, int square_meters, Owner owner, String about, String rules, Address address) {
+    public Property(String id,String name, String type, String capacity, String square_meters, Owner owner, String about, String rules, Address address) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -57,19 +57,19 @@ public class Property {
         this.type = type;
     }
 
-    public int getCapacity() {
+    public String getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void setCapacity(String capacity) {
         this.capacity = capacity;
     }
 
-    public int getSquare_meters() {
+    public String getSquare_meters() {
         return square_meters;
     }
 
-    public void setSquare_meters(int square_meters) {
+    public void setSquare_meters(String square_meters) {
         this.square_meters = square_meters;
     }
 
@@ -132,14 +132,15 @@ public class Property {
 
     // Função para cancelar uma reserva específica pelo id da reserva.
     // Essa função é chamada pelo user ao cancelar uma reserva
-    public void removeReservations_USER(String id){ 
+    public boolean removeReservations_USER(String id){ 
         for (Reservation reservation : Reservations) {
             if(reservation.getId().equals(id)){ 
                 Reservations.remove(reservation);
                 Reservation_counter--;
-                break;
+                return true;
             }
         }
+        return false;
     }
 
     @Override
