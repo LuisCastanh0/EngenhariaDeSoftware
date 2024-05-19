@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class User {
     public String id;
     public String name;
+    public String password;
     public String age;
     public String sex;
     public String email;
@@ -10,9 +11,10 @@ public class User {
     private int Reservation_counter = 0;
     
     // Construtores
-    public User(String id, String name, String age, String sex, String email) {
+    public User(String id, String name, String password, String age, String sex, String email) {
         this.id = id;
         this.name = name;
+        this.password = password;
         this.age = age;
         this.sex = sex;
         this.email = email;
@@ -61,6 +63,9 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }   
 
     // Imprime uma lista com todas as reservas
     public void getReservations() { 

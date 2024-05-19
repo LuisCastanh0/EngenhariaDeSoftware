@@ -145,7 +145,9 @@ public class Property {
 
     @Override
     public String toString() {
-        return name;
+        return "Property [id=" + id + ", name=" + name + "]";
     }
+
+    //TODO Método para mostrar todas as informações da propriedade
 
 }

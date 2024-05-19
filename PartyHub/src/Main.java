@@ -64,12 +64,13 @@ public class Main {
                 // Extrai os atributos do usuário
                 String id_user = attributes_user[0];
                 String name_user = attributes_user[1];
-                String age_user = attributes_user[2];
-                String sex_user = attributes_user[3];
-                String email_user = attributes_user[4];
+                String password_user = attributes_user[2];
+                String age_user = attributes_user[3];
+                String sex_user = attributes_user[4];
+                String email_user = attributes_user[5];
 
                 // Cria um novo objeto User com os valores extraídos
-                User user = new User(id_user, name_user, age_user, sex_user, email_user);
+                User user = new User(id_user, name_user,password_user, age_user, sex_user, email_user);
 
                 Users.add(user);
             }
@@ -132,10 +133,64 @@ public class Main {
         e.printStackTrace();
         }
 
+    // Entrar com um usuário
+    User user = null;
+
+    System.out.println("Enter your username: ");
+    String Username = sc.nextLine();
+
+    System.out.println("Enter your password: ");
+    String Password = sc.nextLine();
+
+    // Verifica se o usuário existe
+    for (User u : Users) {
+        if (u.getName().equals(Username) && u.getPassword().equals(Password)) {
+            user = u;
+            break;
+        }
+    }
+
+    if (user != null) {
+        System.out.println("Login efetuado com sucesso. Bem-vindo, " + user.getName() + "!");
+    } else {
+        System.out.println("Usuário ou senha inválidos. Tente novamente.");
+        }
+
+    // Menu com opções do usuário
+    while (true) {
+        System.out.println("Selecione uma opção:");
+        System.out.println("1. Ver todas as propriedades");
+        System.out.println("2. Ver minhas as reservas");
+
+        int option = sc.nextInt();
+        sc.nextLine();
+        if (option == 1) {
+            for (Property property : Properties) {
+                System.out.println(property);
+            }   
+            System.out.println("Para ver mais sobre uma propriedade, digite o ID dela: "); 
+
+            String id_property = sc.nextLine();
+
+            //TODO Mostrar todas as info da propriedade
+
+            //TODO Deseja alugar? 
+            // Se sim, chamar a função addReservation
+            // Se não, voltar para lista de propriedades
+
+            // Mostrar todas as reservas da propriedade
+
+
+        } else if (option == 2) {
+            user.getReservations();
+        } else {
+            break;
+        }
+
     sc.close();
 
     }
+
+}	
+
 }
-
-
-
