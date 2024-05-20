@@ -148,6 +148,17 @@ public class Property {
         return "Property [id=" + id + ", name=" + name + "]";
     }
 
-    //TODO Método para mostrar todas as informações da propriedade
+    // Método para mostrar todas as informações da propriedade
+    public void showProperty() {
+        System.out.println("\n" + name);
+        System.out.println(type);
+        System.out.println("Capacidade: " + capacity);
+        System.out.println("Tamanho (m²): " + square_meters);
+        System.out.println("Proprietário: " + owner.getName());
+        System.out.println("Telefone proprietário: " + owner.getPhone_number());
+        System.out.println("Sobre: " + about);
+        System.out.println("Regras: " + rules);
+        System.out.println(address);
+    }
 
 }

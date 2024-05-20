@@ -69,7 +69,7 @@ public class User {
 
     // Imprime uma lista com todas as reservas
     public void getReservations() { 
-        System.out.println("Reservas da propriedade " + name + ":");
+        System.out.println("Reservas de" + name + ":");
         for (Reservation reservation : Reservations) {
             System.out.println(reservation);
         }
