@@ -1,13 +1,12 @@
+package Entity;
 public class Owner {
-    public String id;
     public String name;
     public String phone_number;
     public String email;
     public String sex;
     public String age;
 
-    public Owner(String id,String name, String phone_number, String email, String sex, String age) {
-        this.id = id;
+    public Owner(String name, String phone_number, String email, String sex, String age) {
         this.name = name;
         this.phone_number = phone_number;
         this.email = email;
@@ -15,6 +14,7 @@ public class Owner {
         this.age = age;
     }
 
+    // Getters e Setters
     public String getName() {
         return name;
     }
@@ -54,16 +54,5 @@ public class Owner {
     public void setAge(String age) {
         this.age = age;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public String toString() {
-        return "Owner [id=" + id + ", name=" + name + "]";
-    }
-
-
     
 }

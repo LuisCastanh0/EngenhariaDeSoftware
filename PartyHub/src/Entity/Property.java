@@ -1,4 +1,4 @@
-// TODO - Função para atualizar calendário quando User chamar o método addReservation.
+package Entity;
 
 import java.util.ArrayList;
 
@@ -11,13 +11,12 @@ public class Property {
     public Owner owner;
     public String about;
     public String rules;
-    public Calendar available_dates;
-    public Address address;
+    public String address;
     private ArrayList<Reservation> Reservations;
     public int Reservation_counter=0;
 
     // Construtor
-    public Property(String id,String name, String type, String capacity, String square_meters, Owner owner, String about, String rules, Address address) {
+    public Property(String id,String name, String type, String capacity, String square_meters, Owner owner, String about, String rules, String address) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -26,7 +25,6 @@ public class Property {
         this.owner = owner;
         this.about = about;
         this.rules = rules;
-        this.available_dates = new Calendar();
         this.address = address;
         this.Reservations = new ArrayList<>();
         
@@ -97,19 +95,11 @@ public class Property {
         this.rules = rules;
     }
 
-    public Calendar getAvailable_dates() {
-        return available_dates;
-    }
-
-    public void setAvailable_dates(Calendar available_dates) {
-        this.available_dates = available_dates;
-    }
-
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -121,14 +111,11 @@ public class Property {
         }
     }
 
-
-    // Função para salvar uma nova reserva
     // Chamada pelo user ao fazer uma reserva
     public void addReservation(Reservation reservation) {
         Reservations.add(reservation);
         Reservation_counter++;
     }
-
 
     // Função para cancelar uma reserva específica pelo id da reserva.
     // Essa função é chamada pelo user ao cancelar uma reserva
@@ -147,18 +134,4 @@ public class Property {
     public String toString() {
         return "Property [id=" + id + ", name=" + name + "]";
     }
-
-    // Método para mostrar todas as informações da propriedade
-    public void showProperty() {
-        System.out.println("\n" + name);
-        System.out.println(type);
-        System.out.println("Capacidade: " + capacity);
-        System.out.println("Tamanho (m²): " + square_meters);
-        System.out.println("Proprietário: " + owner.getName());
-        System.out.println("Telefone proprietário: " + owner.getPhone_number());
-        System.out.println("Sobre: " + about);
-        System.out.println("Regras: " + rules);
-        System.out.println(address);
-    }
-
 }

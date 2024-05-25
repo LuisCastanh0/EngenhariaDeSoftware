@@ -1,18 +1,17 @@
+package Entity;
 import java.util.ArrayList;
 
 public class User {
-    public String id;
     public String name;
     public String password;
     public String age;
     public String sex;
     public String email;
     private ArrayList<Reservation> Reservations;
-    private int Reservation_counter = 0;
+    public int Reservation_counter = 0;
     
     // Construtores
-    public User(String id, String name, String password, String age, String sex, String email) {
-        this.id = id;
+    public User(String name, String password, String age, String sex, String email) {
         this.name = name;
         this.password = password;
         this.age = age;
@@ -20,16 +19,6 @@ public class User {
         this.email = email;
         this.Reservations = new ArrayList<>();
     }  
-
-
-    // Getters e Setters
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -67,6 +56,9 @@ public class User {
         return password;
     }   
 
+
+    // Operações para control 
+
     // Imprime uma lista com todas as reservas
     public void getReservations() { 
         System.out.println("Reservas de" + name + ":");
@@ -75,22 +67,11 @@ public class User {
         }
     }
 
-    // Gera um id para a reserva
-    public String gen_idReservation(){ 
-        int new_id = Reservation_counter + Integer.parseInt(id) + 100;
-        return Integer.toString(new_id);
-    }
-
-    // Função para salvar uma nova reserva
-    public void addReservation(Property property,String date,String check_in,String check_out) {
-        Reservation newReservation = new Reservation(gen_idReservation(),name,date,check_in,check_out,property);
-        // Adiciona a reserva na lista de reservas de property
-        property.addReservation(newReservation);
-        
-        // Adiciona a reserva na lista de reservas do user
-        Reservations.add(newReservation);
+    // Função para salvar uma nova reserva, chamada pelo ctl
+    public void addReservation(Reservation reservation) {
+        Reservations.add(reservation);
         Reservation_counter++;
-    }  
+    }
 
     // Função para excluir(cancelar) uma reserva 
     public void removeReservations_USER(String id){ 
@@ -105,10 +86,5 @@ public class User {
                 break;
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "User [id=" + id + ", name=" + name + ", Reservations=" + Reservations + "]";
     }
 }

@@ -1,17 +1,16 @@
-
-
+package Entity;
 public class Reservation {
     public String id;
-    public String username;
+    public User user;
     public String date;
     public String check_in;
     public String check_out;
     public Property property;
 
     // Construtor
-    public Reservation(String id, String username, String date, String check_in, String check_out, Property property) {
+    public Reservation(String id, User user, String date, String check_in, String check_out, Property property) {
         this.id = id;
-        this.username = username;
+        this.user = user;
         this.date = date;
         this.check_in = check_in;
         this.check_out = check_out;
@@ -25,14 +24,6 @@ public class Reservation {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getDate() {
@@ -69,11 +60,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation [id=" + id + ",username=" + username + ", date=" + date + ", check_in=" + check_in + ", check_out="
-                + check_out + ", property=" + property + "]";
+        return "Reservation [user=" + user.getName() + ", date=" + date + ", check_in=" + check_in + ", check_out=" + check_out
+                + ", property=" + property + "]";
     }
-
-    
-    
-
 }
