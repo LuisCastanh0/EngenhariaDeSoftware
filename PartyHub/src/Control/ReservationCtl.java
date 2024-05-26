@@ -3,6 +3,7 @@ package Control;
 import Entity.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ReservationCtl {
     int reserv_count = 0;
@@ -55,13 +56,50 @@ public class ReservationCtl {
         }
         return true;
     }
-
-    // Para fazer uma reserva na propriedade x, percorre a lista de reservas de x e verifica se alguma reserva foi feita na data informada
-        // Se bater, jogar no boundary data indisp
-        // Se nao bater, fazer a reserva
     
-    // Percorrer tbm lista do usuário e ver se ele nn tem outra reserva no mesmo dia
-
     // Cancelar reserva
+    public boolean cancelReservation(User user, String reservationId) {
+        // Encontra a reserva com base no ID fornecido
+        Reservation reservationToRemove = null;
+        for (Reservation reservation : user.getReservations()) {
+            if (reservation.getId().equals(reservationId)) {
+                reservationToRemove = reservation;
+                break;
+            }
+        }
+
+        // Se a reserva foi encontrada, remove-a
+        if (reservationToRemove != null) {
+            Property property = reservationToRemove.getProperty();
+            removeReservation_User(user, reservationToRemove);
+            removeReservation_Property(property, reservationToRemove);
+            return true;
+        } else {
+            return false; // Reserva não encontrada com o ID fornecido
+        }
+    }
+
+    public void removeReservation_User(User user, Reservation reservation) {
+        Iterator<Reservation> iterator = user.getReservations().iterator();
+        while (iterator.hasNext()) {
+            Reservation r = iterator.next();
+            if (r.getId().equals(reservation.getId())) {
+                iterator.remove();
+                break;
+            }
+        }
+    }
+
+    public void removeReservation_Property(Property property, Reservation reservation) {
+        Iterator<Reservation> iterator = property.getReservations().iterator();
+        while (iterator.hasNext()) {
+            Reservation r = iterator.next();
+            if (r.getId().equals(reservation.getId())) {
+                iterator.remove();
+                break;
+            }
+        }
+    }
+
 
 }

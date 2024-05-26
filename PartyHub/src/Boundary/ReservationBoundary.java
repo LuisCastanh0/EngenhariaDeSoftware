@@ -40,6 +40,17 @@ public class ReservationBoundary {
         }
     }
 
+    public void showReservations(User user) {
+        System.out.println("Reservas do usuário " + user.getName() + ":");
+        for (Reservation reservation : user.getReservations()) {
+            System.out.println("ID da Reserva: " + reservation.getId());
+            System.out.println("Data: " + reservation.getDate());
+            System.out.println("Propriedade: " + reservation.getProperty().getName());
+            System.out.println();
+        }
+    }
+    
+
     
         
 }

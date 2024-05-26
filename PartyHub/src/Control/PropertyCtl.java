@@ -18,6 +18,10 @@ public class PropertyCtl {
             System.out.println(Property);
         }
     }
+    
+    public ArrayList<Property> getProperties() {
+        return Properties;
+    }
 
     // Função p encontrar uma property 
     public Property findProperty(String id) {

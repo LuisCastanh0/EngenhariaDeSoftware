@@ -113,19 +113,12 @@ public class Property {
         Reservation_counter++;
     }
 
-    // Função para cancelar uma reserva específica pelo id da reserva.
-    // Essa função é chamada pelo user ao cancelar uma reserva
-    public boolean removeReservations_USER(String id){ 
-        for (Reservation reservation : Reservations) {
-            if(reservation.getId().equals(id)){ 
-                Reservations.remove(reservation);
-                Reservation_counter--;
-                return true;
-            }
-        }
-        return false;
+    // Função para remover uma reserva, chamada pelo ctl
+    public void removeReservation(Reservation reservation) {
+        Reservations.remove(reservation);
+        Reservation_counter--;
     }
-
+    
     @Override
     public String toString() {
         return "Property [id=" + id + ", name=" + name + ", type=" + type + ", capacity=" + capacity

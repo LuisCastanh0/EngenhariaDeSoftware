@@ -66,18 +66,9 @@ public class User {
         Reservation_counter++;
     }
 
-    // Função para excluir(cancelar) uma reserva 
-    public void removeReservations_USER(String id){ 
-        for (Reservation reservation : Reservations) {
-            if(reservation.getId().equals(id)){ 
-                // Remove reserva da lista do user
-                Reservations.remove(reservation);
-                Reservation_counter--;
-
-                // Remove reserva da lista da property
-                reservation.getProperty().removeReservations_USER(id);
-                break;
-            }
-        }
+    // Função para remover uma reserva, chamada pelo ctl
+    public void removeReservation(Reservation reservation) {
+        Reservations.remove(reservation);
+        Reservation_counter--;
     }
 }
