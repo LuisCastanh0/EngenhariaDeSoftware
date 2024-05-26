@@ -56,15 +56,8 @@ public class User {
         return password;
     }   
 
-
-    // Operações para control 
-
-    // Imprime uma lista com todas as reservas
-    public void getReservations() { 
-        System.out.println("Reservas de" + name + ":");
-        for (Reservation reservation : Reservations) {
-            System.out.println(reservation);
-        }
+    public ArrayList<Reservation> getReservations() { 
+        return Reservations;
     }
 
     // Função para salvar uma nova reserva, chamada pelo ctl

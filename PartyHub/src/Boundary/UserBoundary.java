@@ -6,11 +6,10 @@ import Control.*;
 import java.util.Scanner;
 
 public class UserBoundary {
-    private UserCtl userCtl = new UserCtl();
-    private Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
-    public void login() {
-        System.out.println("Digite usuário: ");
+    public static User login(UserCtl userCtl) {
+        System.out.print("Digite usuário: ");
         String name = sc.next();
         System.out.print("Digite a senha: ");
         String password = sc.next();
@@ -18,18 +17,21 @@ public class UserBoundary {
         User user = userCtl.findUser(name);
         if (user != null) {
             if (userCtl.verifyLogin(user, password)) {
-                System.out.println("Login efetuado com sucesso");
+                System.out.println("\n\nBem vindo " + user.getName());
+                return user;
             } 
             else {
                 System.out.println("Senha inválida");
+                return null;
             }
         } 
         else {
             System.out.println("Usuário não existe");
+            return null;
         }
     } 
 
-    public void register() {
+    public static void register(UserCtl userCtl) {
         System.out.println("Digite o nome: ");
         String name = sc.next();
         System.out.print("Digite a senha: ");

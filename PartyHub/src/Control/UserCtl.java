@@ -9,6 +9,10 @@ public class UserCtl {
     // Lista de Users
     private ArrayList<User> Users;
 
+    public UserCtl() {
+        Users = new ArrayList<>();
+    }
+
     // Função p encontrar um User 
     public User findUser(String name) {
         for (User user : Users) {

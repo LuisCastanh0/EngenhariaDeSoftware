@@ -103,12 +103,8 @@ public class Property {
         this.address = address;
     }
 
-    // Imprime uma lista com todas as reservas da propriedade
-    public void getReservations() { 
-        System.out.println("Reservas da propriedade " + name + ":");
-        for (Reservation reservation : Reservations) {
-            System.out.println(reservation);
-        }
+    public ArrayList<Reservation> getReservations() { 
+        return Reservations;
     }
 
     // Chamada pelo user ao fazer uma reserva
@@ -129,6 +125,7 @@ public class Property {
         }
         return false;
     }
+
 
     @Override
     public String toString() {

@@ -8,6 +8,10 @@ public class PropertyCtl {
     // Lista de Users
     private ArrayList<Property> Properties;
 
+    public PropertyCtl() {
+        Properties = new ArrayList<>();
+    }   
+
     // Mostra todas as propriedades
     public void showProperties() {
         for (Property Property : Properties) {

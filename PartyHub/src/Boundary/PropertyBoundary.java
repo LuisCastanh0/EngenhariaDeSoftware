@@ -6,21 +6,22 @@ import Control.*;
 import java.util.Scanner;
 
 public class PropertyBoundary {
-    private PropertyCtl propertyCtl = new PropertyCtl();
-    private Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
-    public void showProperties() {
+    public static void showProperties(PropertyCtl propertyCtl) {
         propertyCtl.showProperties();
     }
 
-    public void selectProperty() { 
-        System.out.println("Digite o ID da propriedade que deseja ver: ");
+    public static Property selectProperty(PropertyCtl propertyCtl) { 
+        System.out.print("Digite o ID da propriedade que deseja ver: ");
         String id = sc.next();
         Property p =  propertyCtl.findProperty(id);
         if (p != null) {
-            System.out.println(p);
+            System.out.println("\n\n"+ p);
+            return p;
         } else {
             System.out.println("Propriedade inexistente");
+            return null;
         }
     }
 }
