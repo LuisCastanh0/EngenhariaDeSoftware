@@ -1,3 +1,5 @@
+// Feito por Luis Castanho - 10401017
+
 package Test;
 
 import Entity.*;
@@ -14,11 +16,13 @@ public class TestAlugar {
         UserCtl userctl = new UserCtl();
         PropertyCtl propertyCtl = new PropertyCtl();
         ReservationCtl reservationCtl = new ReservationCtl();
+        OwnerCtl ownerCtl = new OwnerCtl();
         
         // Cria boundaries
         UserBoundary userBoundary = new UserBoundary();
         PropertyBoundary propertyBoundary = new PropertyBoundary();
         ReservationBoundary reservationBoundary = new ReservationBoundary();
+        OwnerBoundary ownerBoundary = new OwnerBoundary();
 
         // Popula sistema
         User user1 = new User("Fernando", "BocaDeFesta", "20", "Viadinho", "fernando@fernando");
@@ -26,8 +30,11 @@ public class TestAlugar {
         userctl.addUser(user1);
         userctl.addUser(user2);
 
-        Owner Luis = new Owner("Luis", "1234-5678", "luis@gmail.com", "Masculino", "21");
-        Owner Julian = new Owner("Julian", "5678-1234", "julian@gmail.com", "Masculino","21");
+        Owner Luis = new Owner("Luis","1234", "1234-5678", "luis@gmail.com", "Masculino", "21");
+        Owner Julian = new Owner("Julian","1234", "5678-1234", "julian@gmail.com", "Masculino","21");
+        ownerCtl.addOwner(Luis);
+        ownerCtl.addOwner(Julian);
+
 
         Property property1 = new Property("101", "Casa Luis", "Casa", "30", "150", Luis, "Casa simples no centro", "Proibido fumar", "Rua Eneas Pereira Barbante, 123");
         Property property2 = new Property("102","Salão Julian", "Salão de Festas", "80", "300", Julian, "Salão de festas perfeito para seu evento", "Proibido uso de drogas", "Av. Brigadeiro Faria Lima, 456");

@@ -1,13 +1,15 @@
 package Entity;
 public class Owner {
     public String name;
+    public String password;
     public String phone_number;
     public String email;
     public String sex;
     public String age;
 
-    public Owner(String name, String phone_number, String email, String sex, String age) {
+    public Owner(String name, String password, String phone_number, String email, String sex, String age) {
         this.name = name;
+        this.password = password;
         this.phone_number = phone_number;
         this.email = email;
         this.sex = sex;
@@ -21,6 +23,14 @@ public class Owner {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getPhone_number() {

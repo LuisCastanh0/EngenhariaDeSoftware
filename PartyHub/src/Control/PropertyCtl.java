@@ -33,4 +33,16 @@ public class PropertyCtl {
     public void addProperty(Property property) {
         Properties.add(property);
     } 
+
+
+    // Função para encontrar todas as propriedades de um Owner especifico
+    public ArrayList<Property> findPropertiesByOwner(Owner owner) {
+        ArrayList<Property> properties = new ArrayList<>();
+        for (Property property : Properties) {
+            if (property.getOwner().equals(owner)) {
+                properties.add(property);
+            }
+        }
+        return properties;
+    }
 }  
