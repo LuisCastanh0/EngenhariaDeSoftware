@@ -1,3 +1,5 @@
+package Test;
+
 import Entity.*;
 import Control.*;
 import Boundary.*;
@@ -12,7 +14,7 @@ public class TestAlugar {
         UserCtl userctl = new UserCtl();
         PropertyCtl propertyCtl = new PropertyCtl();
         ReservationCtl reservationCtl = new ReservationCtl();
-
+        
         // Cria boundaries
         UserBoundary userBoundary = new UserBoundary();
         PropertyBoundary propertyBoundary = new PropertyBoundary();
@@ -32,16 +34,18 @@ public class TestAlugar {
         propertyCtl.addProperty(property1);
         propertyCtl.addProperty(property2);
 
+
         boolean exitProgram = false;
         while (!exitProgram) {
-            User test_user = UserBoundary.login(userctl);
+            // Fazer login
+            User test_user = userBoundary.login(userctl);
             boolean userLoggedIn = (test_user != null);
             while (userLoggedIn) {
                 // Mostrar propriedades
-                PropertyBoundary.showProperties(propertyCtl);
+                propertyBoundary.showProperties(propertyCtl);
 
                 // Selecionar propriedade
-                Property test_property = PropertyBoundary.selectProperty(propertyCtl);
+                Property test_property = propertyBoundary.selectProperty(propertyCtl);
 
                 // Fazer reserva
                 System.out.print("Deseja reservar essa propriedade? (s/n): ");

@@ -129,6 +129,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return "Property [id=" + id + ", name=" + name + "]";
+        return "Property " + name + ", id: " + id;
     }
 }

@@ -60,7 +60,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation [user=" + user.getName() + ", date=" + date + ", check_in=" + check_in + ", check_out=" + check_out
-                + ", property=" + property + "]";
+        return "Reservation [user=" + user.getName() + ", date=" + date + property + "]";
     }
 }

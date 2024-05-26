@@ -6,9 +6,9 @@ import Control.*;
 import java.util.Scanner;
 
 public class UserBoundary {
-    private static Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
-    public static User login(UserCtl userCtl) {
+    public User login(UserCtl userCtl) {
         System.out.print("Digite usuário: ");
         String name = sc.next();
         System.out.print("Digite a senha: ");
@@ -31,7 +31,7 @@ public class UserBoundary {
         }
     } 
 
-    public static void register(UserCtl userCtl) {
+    public void register(UserCtl userCtl) {
         System.out.println("Digite o nome: ");
         String name = sc.next();
         System.out.print("Digite a senha: ");

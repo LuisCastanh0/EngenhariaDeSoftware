@@ -10,17 +10,21 @@ public class ReservationBoundary {
     private Scanner sc = new Scanner(System.in);
 
     public void createReservation(User user, Property property) {
-        System.out.println("Digite a data da reserva: ");
+        System.out.print("Digite a data da reserva: ");
         String date = sc.next();
-        System.out.println("Digite a hora de entrada: ");
+        System.out.print("Digite a hora de entrada: ");
         String check_in = sc.next();
-        System.out.println("Digite a hora de saida: ");
+        System.out.print("Digite a hora de saida: ");
         String check_out = sc.next();
         if (reservationCtl.createReservation(user, property, date, check_in, check_out)) {
             System.out.println("Reserva efetuada com sucesso");
+            System.out.println(user.getReservations());
+            System.out.println(property.getReservations());
         }
         else {
             System.out.println("Reserva Indisponível");	
+            System.out.println(user.getReservations());
+            System.out.println(property.getReservations());
         }
     }
 
