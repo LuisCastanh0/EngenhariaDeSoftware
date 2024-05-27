@@ -20,13 +20,14 @@ public class ReservationCtl {
         }
     }
 
+    // Gera um Id único para a reserva - numdereservas^2
     public String createId(){ 
-        // cria um Id único para a reserva
         String id = Double.toString(Math.pow(2,reserv_count));
         reserv_count = reserv_count + 1;
         return id;
     }
 
+    // Função para verificar se uma reserva pode ser feita pelo user na data especificada
     public boolean isAvailable(Property property,Reservation reservation,User user) {
         if (check_property(property,reservation) && check_user(user,reservation)) {
           return true;  
@@ -36,25 +37,27 @@ public class ReservationCtl {
         }
     }
 
+    // Verifica se as datas das reservas em uma propriedade coincidem com a da reserva que será feita
     public static boolean check_property(Property property,Reservation reservation) {
         ArrayList<Reservation> temp = property.getReservations();
 
         for (Reservation r : temp) {
             if(r.getDate().equals(reservation.getDate())) {
-                return false;
+                return false; // Se sim, retorna falso, a reserva não pode ser feita
             }
         }
-        return true;
+        return true; // Se não, retorna true, reserva pode ser feita 
     }
 
+    // Verifica se o usuário fazendo a reserva possui outras reservas na mesma data
     public static boolean check_user(User user,Reservation reservation) {
         ArrayList<Reservation> temp = user.getReservations();
         for (Reservation r : temp) {
             if(r.getDate().equals(reservation.getDate())) {
-                return false;
+                return false; // Se sim, a reserva não pode ser feita
             }
         }
-        return true;
+        return true; // Se não, a reserva pode ser feita
     }
     
     // Cancelar reserva
@@ -79,6 +82,7 @@ public class ReservationCtl {
         }
     }
 
+    // Remove uma reserva na lista do usuário
     public void removeReservation_User(User user, Reservation reservation) {
         Iterator<Reservation> iterator = user.getReservations().iterator();
         while (iterator.hasNext()) {
@@ -90,6 +94,7 @@ public class ReservationCtl {
         }
     }
 
+    // Remove uma reserva na lista da propriedade
     public void removeReservation_Property(Property property, Reservation reservation) {
         Iterator<Reservation> iterator = property.getReservations().iterator();
         while (iterator.hasNext()) {
