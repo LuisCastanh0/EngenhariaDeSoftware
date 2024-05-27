@@ -1,3 +1,4 @@
+// Feito por Julian Teixeira - 10400765
 package Test;
 
 import Entity.*;
@@ -8,7 +9,9 @@ import java.util.Scanner;
 
 public class TestGerenciarAlugueis {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+        
         // Cria controlers
         UserCtl userctl = new UserCtl();
         PropertyCtl propertyCtl = new PropertyCtl();
@@ -22,7 +25,7 @@ public class TestGerenciarAlugueis {
         OwnerBoundary ownerBoundary = new OwnerBoundary();
     
         // Popula sistema
-        User user1 = new User("Fernando", "BocaDeFesta", "20", "Viadinho", "fernando@fernando");
+        User user1 = new User("Fernando", "1234", "20", "Viadinho", "fernando@fernando");
         User user2 = new User("Maria", "4321", "21", "Feminino", "maria@maria");
         userctl.addUser(user1);
         userctl.addUser(user2);
@@ -41,9 +44,9 @@ public class TestGerenciarAlugueis {
         propertyCtl.addProperty(property3);
         propertyCtl.addProperty(property4);
 
-        // Login 
         boolean exitProgram = false;
         while (!exitProgram) {
+            // Login 
             Owner test_owner = ownerBoundary.login(ownerCtl);
             if (test_owner != null) {
                 boolean exitPropertyMenu = false;
@@ -61,21 +64,21 @@ public class TestGerenciarAlugueis {
                             System.out.print("Deseja editar outra propriedade? (s/n): ");
                             String editAnother = sc.nextLine();
                             if (editAnother.equalsIgnoreCase("n")) {
-                                exitEditMenu = true;
+                                exitEditMenu = true; // Sai do menu
                             }
                         }
                     }
                     System.out.print("Deseja sair da lista de propriedades? (s/n): ");
                     String exitProperty = sc.nextLine();
                     if (exitProperty.equalsIgnoreCase("s")) {
-                        exitPropertyMenu = true;
+                        exitPropertyMenu = true; // Reinicia o menu
                     }
                 }
             }
             System.out.print("Deseja sair do programa? (s/n): ");
             String exitProg = sc.nextLine();
             if (exitProg.equalsIgnoreCase("s")) {
-                exitProgram = true;
+                exitProgram = true; // Finaliza a execução 
             }
         }
         sc.close();
