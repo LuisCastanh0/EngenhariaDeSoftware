@@ -57,4 +57,20 @@ public class OwnerBoundary {
         }
     } 
 
+    public void managePropertiesMenu(Owner owner, PropertyCtl propertyCtl, PropertyBoundary propertyBoundary) {
+        boolean exitPropertyMenu = false;
+        while (!exitPropertyMenu) {
+            showProperties(owner, propertyCtl);
+            Property selectedProperty = propertyBoundary.selectProperty(propertyCtl);
+            if (selectedProperty != null) {
+                propertyBoundary.updateProperty(selectedProperty, sc);
+            }
+            System.out.print("Deseja sair da lista de propriedades? (s/n): ");
+            String exitProperty = sc.nextLine();
+            if (exitProperty.equalsIgnoreCase("s")) {
+                exitPropertyMenu = true;
+            }
+        }
+    }
+
 }
