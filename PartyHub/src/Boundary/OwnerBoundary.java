@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class OwnerBoundary {
     private Scanner sc = new Scanner(System.in);
 
-    public Owner login(OwnerCtl ownerCtl) {
-        System.out.print("Digite o usuário: ");
+    public Owner login(OwnerCtl ownerCtl) {  	
+    	System.out.print("Digite o usuário: ");
         String name = sc.nextLine();
         System.out.print("Digite a senha: ");
         String password = sc.nextLine();
@@ -18,7 +18,7 @@ public class OwnerBoundary {
         Owner owner = ownerCtl.findOwner(name);
         if (owner != null) {
             if (ownerCtl.verifyLogin(owner, password)) {
-                System.out.println("\n\nBem vindo " + owner.getName());
+                System.out.println("\n\nBem vindo(a) " + owner.getName());
                 return owner;
             } 
             else {

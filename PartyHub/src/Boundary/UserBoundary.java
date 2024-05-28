@@ -7,7 +7,8 @@ import java.util.Scanner;
 
 public class UserBoundary {
     private Scanner sc = new Scanner(System.in);
-
+    
+    
     public User login(UserCtl userCtl) {
         System.out.print("Digite usuário: ");
         String name = sc.next();
@@ -17,16 +18,16 @@ public class UserBoundary {
         User user = userCtl.findUser(name);
         if (user != null) {
             if (userCtl.verifyLogin(user, password)) {
-                System.out.println("\n\nBem vindo " + user.getName());
+                System.out.println("\n\nBem vindo(a) " + user.getName());
                 return user;
             } 
             else {
-                System.out.println("Senha inválida");
+                System.out.print("Senha inválida");
                 return null;
             }
         } 
         else {
-            System.out.println("Usuário não existe");
+            System.out.print("Usuário não existe");
             return null;
         }
     } 

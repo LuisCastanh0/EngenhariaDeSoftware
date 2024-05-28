@@ -5,13 +5,14 @@ import java.util.ArrayList;
 import Entity.*;
 
 public class PropertyCtl {
-    // Lista de Users
+
+	// Lista de Users
     private ArrayList<Property> Properties;
 
     public PropertyCtl() {
         Properties = new ArrayList<>();
     }   
-
+    
     // Mostra todas as propriedades
     public void showProperties() {
         for (Property Property : Properties) {
@@ -35,7 +36,8 @@ public class PropertyCtl {
 
     // Função p adicionar uma property
     public void addProperty(Property property) {
-        Properties.add(property);
+        
+    	Properties.add(property);
     } 
 
 

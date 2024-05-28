@@ -18,8 +18,6 @@ public class ReservationBoundary {
         String check_out = sc.next();
         if (reservationCtl.createReservation(user, property, date, check_in, check_out)) {
             System.out.println("Reserva efetuada com sucesso");
-            System.out.println(user.getReservations());
-            System.out.println(property.getReservations());
         }
         else {
             System.out.println("Reserva Indisponível");	

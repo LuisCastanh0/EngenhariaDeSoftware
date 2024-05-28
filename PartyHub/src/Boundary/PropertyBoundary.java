@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class PropertyBoundary {
     private Scanner sc = new Scanner(System.in);
-
+    
     public void showProperties(PropertyCtl propertyCtl) {
-        propertyCtl.showProperties();
+    	propertyCtl.showProperties();
     }
 
     public Property selectProperty(PropertyCtl propertyCtl) { 

@@ -15,6 +15,7 @@ public class Property {
     private ArrayList<Reservation> Reservations;
     public int Reservation_counter=0;
 
+    
     // Construtor
     public Property(String id,String name, String type, String capacity, String square_meters, Owner owner, String about, String rules, String address) {
         this.id = id;
@@ -106,7 +107,7 @@ public class Property {
     public ArrayList<Reservation> getReservations() { 
         return Reservations;
     }
-
+    
     // Chamada pelo user ao fazer uma reserva
     public void addReservation(Reservation reservation) {
         Reservations.add(reservation);
